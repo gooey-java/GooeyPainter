@@ -19,6 +19,8 @@ Science A.
    (without one, you get a blank 16 x 16 grid).
 4. Import, write your code, and hit Run:
 
+## Your first program
+
 ```java
 import gooeypainter.*;
 
