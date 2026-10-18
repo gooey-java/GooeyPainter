@@ -45,6 +45,8 @@ A `grid.txt` is drawn one row per line, with spaces between squares:
 .  .  .  .  .  .
 ```
 
+![](src/gooeypainter/doc-files/HelloPainter.png)
+
 ## Coming from Code.org
 
 Code written for Code.org's Neighborhood runs unchanged except for the import:
