@@ -1,0 +1,8 @@
+# Compiler output (build.sh / build.bat delete this when they finish)
+build/
+bin/
+*.class
+
+# OS clutter
+.DS_Store
+Thumbs.db
