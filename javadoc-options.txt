@@ -1,0 +1,9 @@
+-quiet
+-Xdoclint:all
+--release 11
+-d _site/docs
+-windowtitle GooeyPainter
+-doctitle GooeyPainter
+-bottom "Copyright &copy; 2026 GooeyJava. Released under the <a href='https://github.com/gooey-java/GooeyPainter/blob/main/LICENSE'>MIT License</a>."
+-sourcepath src
+gooeypainter

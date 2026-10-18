@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>GooeyPainter · Gooey Java</title>
+<meta name="description" content="GooeyPainter: Code.org&#x27;s Neighborhood Painter for VS Code. Move, turn and paint squares to make pixel art.">
+<link rel="icon" href="https://gooey-java.github.io/logo.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+<!-- Shared Gooey Java styles: edit them in the gooey-java.github.io repo -->
+<link rel="stylesheet" href="https://gooey-java.github.io/gooey.css">
+</head>
+<body>
+
+<svg class="goo" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+  <path d="M0 0 H1200 V38
+    C1170 38 1165 52 1160 70 C1156 86 1140 86 1137 70 C1133 52 1120 40 1090 40
+    C1040 40 1030 44 1022 62 C1015 100 990 104 985 72 C980 46 960 40 920 40
+    C860 40 850 42 845 56 C840 72 826 72 822 56 C818 42 800 38 760 38
+    C700 38 690 44 684 66 C678 112 650 114 646 74 C642 46 620 40 580 40
+    C520 40 512 44 506 58 C500 76 484 76 480 58 C476 44 460 40 420 40
+    C360 40 350 46 344 70 C337 98 314 98 310 70 C306 46 290 40 250 40
+    C190 40 182 44 176 60 C170 80 152 80 148 60 C144 44 128 38 90 38
+    C40 38 34 42 28 60 C22 84 6 82 3 60 C1 46 0 40 0 38 Z"/>
+</svg>
+
+<div class="wrap">
+  <nav aria-label="Main">
+    <a class="brand" href="https://gooey-java.github.io/">
+      <img src="https://gooey-java.github.io/logo.svg" alt="" width="42" height="42">
+      Gooey Java
+    </a>
+    <ul>
+      <li><a href="docs/">Docs</a></li>
+      <li><a href="https://github.com/gooey-java/GooeyPainter">GitHub</a></li>
+      <li><a href="https://gooey-java.github.io/#menu">All libraries</a></li>
+    </ul>
+  </nav>
+
+  <header class="show-hero">
+    <div>
+      <p class="size">Latte art</p>
+      <h1>GooeyPainter</h1>
+      <p class="pitch">Program a Painter to walk around a grid and turn it into pixel art.</p>
+      <p>It works just like the Neighborhood from Code.org’s CSA course, so your first Java project runs in a real IDE with the same Painter you already know.</p>
+        <div class="buttons">
+          <a class="btn btn-main" href="docs/">Read the docs</a>
+          <a class="btn btn-ghost" href="#setup">Get started</a>
+        </div>
+        <p class="fine">Download <a href="GooeyPainter.jar" download>GooeyPainter.jar</a> and <a href="GooeyPainter-sources.jar" download>GooeyPainter-sources.jar</a>. Runs on Java 11 or newer.</p>
+    </div>
+    <figure class="exhibit">
+      <div class="pixel-grid" style="--cols:16" role="img" aria-label="A 16 by 16 grid of grass squares with the Gooey Java mug painted on it as pixel art">
+      <span></span><span class="g2"></span><span></span><span class="g2"></span><span></span><span class="g2"></span><span></span><span class="g2"></span><span></span><span class="g2"></span><span></span><span class="g2"></span><span></span><span class="g2"></span><span></span><span class="g2"></span>
+      <span class="g2"></span><span></span><span class="g2"></span><span></span><span class="g2"></span><span></span><span style="--px:#6b4a38"></span><span></span><span class="g2"></span><span></span><span style="--px:#6b4a38"></span><span></span><span class="g2"></span><span></span><span class="g2"></span><span></span>
+      <span></span><span class="g2"></span><span></span><span class="g2"></span><span></span><span style="--px:#6b4a38"></span><span></span><span class="g2"></span><span></span><span class="g2"></span><span></span><span style="--px:#6b4a38"></span><span></span><span class="g2"></span><span></span><span class="g2"></span>
+      <span class="g2"></span><span></span><span class="g2"></span><span></span><span class="g2"></span><span></span><span style="--px:#6b4a38"></span><span></span><span class="g2"></span><span></span><span style="--px:#6b4a38"></span><span></span><span class="g2"></span><span></span><span class="g2"></span><span></span>
+      <span></span><span class="g2"></span><span></span><span class="g2"></span><span></span><span class="g2"></span><span></span><span class="g2"></span><span></span><span class="g2"></span><span></span><span class="g2"></span><span></span><span class="g2"></span><span></span><span class="g2"></span>
+      <span class="g2"></span><span></span><span style="--px:#3a2216"></span><span style="--px:#3a2216"></span><span style="--px:#3a2216"></span><span style="--px:#3a2216"></span><span style="--px:#3a2216"></span><span style="--px:#3a2216"></span><span style="--px:#3a2216"></span><span style="--px:#3a2216"></span><span style="--px:#3a2216"></span><span style="--px:#3a2216"></span><span style="--px:#3a2216"></span><span style="--px:#3a2216"></span><span class="g2"></span><span></span>
+      <span></span><span class="g2"></span><span style="--px:#3a2216"></span><span style="--px:#eba43a"></span><span style="--px:#eba43a"></span><span style="--px:#eba43a"></span><span style="--px:#eba43a"></span><span style="--px:#eba43a"></span><span style="--px:#eba43a"></span><span style="--px:#eba43a"></span><span style="--px:#eba43a"></span><span style="--px:#eba43a"></span><span style="--px:#eba43a"></span><span style="--px:#3a2216"></span><span></span><span class="g2"></span>
+      <span class="g2"></span><span></span><span style="--px:#3a2216"></span><span style="--px:#eba43a"></span><span style="--px:#eba43a"></span><span style="--px:#eba43a"></span><span style="--px:#eba43a"></span><span style="--px:#eba43a"></span><span style="--px:#eba43a"></span><span style="--px:#eba43a"></span><span style="--px:#eba43a"></span><span style="--px:#eba43a"></span><span style="--px:#eba43a"></span><span style="--px:#3a2216"></span><span style="--px:#3a2216"></span><span style="--px:#3a2216"></span>
+      <span></span><span class="g2"></span><span style="--px:#3a2216"></span><span style="--px:#d9434f"></span><span style="--px:#eba43a"></span><span style="--px:#eba43a"></span><span style="--px:#d9434f"></span><span style="--px:#d9434f"></span><span style="--px:#eba43a"></span><span style="--px:#eba43a"></span><span style="--px:#d9434f"></span><span style="--px:#eba43a"></span><span style="--px:#eba43a"></span><span style="--px:#3a2216"></span><span></span><span style="--px:#3a2216"></span>
+      <span class="g2"></span><span></span><span style="--px:#3a2216"></span><span style="--px:#d9434f"></span><span style="--px:#d9434f"></span><span style="--px:#eba43a"></span><span style="--px:#d9434f"></span><span style="--px:#d9434f"></span><span style="--px:#d9434f"></span><span style="--px:#eba43a"></span><span style="--px:#d9434f"></span><span style="--px:#d9434f"></span><span style="--px:#d9434f"></span><span style="--px:#3a2216"></span><span class="g2"></span><span style="--px:#3a2216"></span>
+      <span></span><span class="g2"></span><span style="--px:#3a2216"></span><span style="--px:#d9434f"></span><span style="--px:#d9434f"></span><span style="--px:#d9434f"></span><span style="--px:#d9434f"></span><span style="--px:#d9434f"></span><span style="--px:#d9434f"></span><span style="--px:#d9434f"></span><span style="--px:#d9434f"></span><span style="--px:#d9434f"></span><span style="--px:#d9434f"></span><span style="--px:#3a2216"></span><span></span><span style="--px:#3a2216"></span>
+      <span class="g2"></span><span></span><span style="--px:#3a2216"></span><span style="--px:#d9434f"></span><span style="--px:#d9434f"></span><span style="--px:#3a2216"></span><span style="--px:#3a2216"></span><span style="--px:#d9434f"></span><span style="--px:#d9434f"></span><span style="--px:#d9434f"></span><span style="--px:#3a2216"></span><span style="--px:#3a2216"></span><span style="--px:#d9434f"></span><span style="--px:#3a2216"></span><span class="g2"></span><span style="--px:#3a2216"></span>
+      <span></span><span class="g2"></span><span style="--px:#3a2216"></span><span style="--px:#f28c95"></span><span style="--px:#d9434f"></span><span style="--px:#d9434f"></span><span style="--px:#d9434f"></span><span style="--px:#d9434f"></span><span style="--px:#d9434f"></span><span style="--px:#d9434f"></span><span style="--px:#d9434f"></span><span style="--px:#d9434f"></span><span style="--px:#f28c95"></span><span style="--px:#3a2216"></span><span style="--px:#3a2216"></span><span style="--px:#3a2216"></span>
+      <span class="g2"></span><span></span><span style="--px:#3a2216"></span><span style="--px:#d9434f"></span><span style="--px:#d9434f"></span><span style="--px:#d9434f"></span><span style="--px:#3a2216"></span><span style="--px:#d9434f"></span><span style="--px:#d9434f"></span><span style="--px:#3a2216"></span><span style="--px:#d9434f"></span><span style="--px:#d9434f"></span><span style="--px:#d9434f"></span><span style="--px:#3a2216"></span><span class="g2"></span><span></span>
+      <span></span><span class="g2"></span><span></span><span style="--px:#3a2216"></span><span style="--px:#d9434f"></span><span style="--px:#d9434f"></span><span style="--px:#d9434f"></span><span style="--px:#3a2216"></span><span style="--px:#3a2216"></span><span style="--px:#d9434f"></span><span style="--px:#d9434f"></span><span style="--px:#d9434f"></span><span style="--px:#3a2216"></span><span class="g2"></span><span></span><span class="g2"></span>
+      <span class="g2"></span><span></span><span class="g2"></span><span></span><span style="--px:#3a2216"></span><span style="--px:#3a2216"></span><span style="--px:#3a2216"></span><span style="--px:#3a2216"></span><span style="--px:#3a2216"></span><span style="--px:#3a2216"></span><span style="--px:#3a2216"></span><span style="--px:#3a2216"></span><span class="g2"></span><span></span><span class="g2"></span><span></span>
+      </div>
+      <figcaption>Painted one square at a time with <code>move()</code> and <code>paint()</code>.</figcaption>
+    </figure>
+  </header>
+</div>
+
+<main>
+  <section class="features wrap" aria-labelledby="featTitle">
+    <h2 class="section-title" id="featTitle">What’s in the cup</h2>
+    <ul class="feature-list">
+        <li>
+          <h3>Same Painter as Code.org</h3>
+          <p>Same methods, same messages, same <code>[EXCEPTION]</code> errors. Code from your Code.org lessons runs once you change the import.</p>
+        </li>
+        <li>
+          <h3>Made for pixel art</h3>
+          <p>Paint with hex codes copied straight from pixilart.com, speed the animation up to instant, and label every row and column.</p>
+        </li>
+        <li>
+          <h3>Draw your own neighborhood</h3>
+          <p>Set up the grid in a <code>grid.txt</code> file: <code>.</code> for grass, <code>X</code> for obstacles and <code>B5</code> for a bucket with 5 paint.</p>
+        </li>
+    </ul>
+  </section>
+
+  <section class="start first-sip" aria-labelledby="sipTitle">
+    <div class="wrap">
+      <h2 class="section-title" id="sipTitle">Your first sip</h2>
+      <p class="section-sub">Paint three squares, then step aside so the art shows.</p>
+      <div class="code-block">
+<pre>import gooeypainter.*;
+
+public class MyNeighborhood {
+    public static void main(String[] args) {
+        <span class="c">// Start at (0, 0), facing east, with 10 paint</span>
+        Painter artist = new Painter(0, 0, "east", 10);
+        artist.paint("red");
+        artist.move();
+        artist.paint("#FFA500");   <span class="c">// hex codes work too</span>
+        artist.move();
+        artist.paint("gold");
+        artist.hidePainter();
+    }
+}</pre>
+      </div>
+    </div>
+  </section>
+
+  <section class="setup wrap" id="setup" aria-labelledby="setupTitle">
+    <h2 class="section-title" id="setupTitle">Get started in three sips</h2>
+    <ol class="steps">
+      <li>
+        <h3>Grab the jars</h3>
+        <p>Download <a href="GooeyPainter.jar" download>GooeyPainter.jar</a> and <a href="GooeyPainter-sources.jar" download>GooeyPainter-sources.jar</a>.</p>
+      </li>
+      <li>
+        <h3>Drop them in <code>lib</code></h3>
+        <p>Put both jars in your project’s <code>lib</code> folder. VS Code shows the docs when you hover over GooeyPainter code.</p>
+      </li>
+      <li>
+        <h3>Import and run</h3>
+        <p>Add <code>import gooeypainter.*;</code> at the top of your file, write your code and hit Run.</p>
+      </li>
+    </ol>
+  </section>
+</main>
+
+<footer class="wrap">
+  <p>GooeyPainter is free and open source under the <a href="https://github.com/gooey-java/GooeyPainter/blob/main/LICENSE">MIT License</a>. Read the code <a href="https://github.com/gooey-java/GooeyPainter">on GitHub</a>.</p>
+  <p>Part of <a href="https://gooey-java.github.io/">Gooey Java</a>, brewed by a CS teacher for AP Computer Science A students.</p>
+</footer>
+
+</body>
+</html>

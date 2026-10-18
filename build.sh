@@ -1,25 +1,39 @@
 #!/bin/sh
 # Builds GooeyPainter (Mac / Linux). Run from anywhere:  ./build.sh
 #
-#   GooeyPainter.jar           compiled library, for students' lib folders
-#   GooeyPainter-sources.jar   source code, so VS Code shows the docs on hover
-#   docs/                      the Javadoc website (served by GitHub Pages),
-#                              with copies of both jars for download links
+#   GooeyPainter.jar           the compiled library, for students' lib folders
+#   GooeyPainter-sources.jar   the source code, so VS Code shows the docs on hover
+#   _site/               the website, exactly as GitHub Pages publishes it:
+#                          the showcase page (from site/), the Javadoc (in docs/),
+#                          and copies of both jars for the download links
+#
+# GitHub runs this same script after every push (see .github/workflows/pages.yml),
+# so the published website always matches the code. Run it yourself to rebuild
+# the jars in this folder or to preview the website by opening _site/index.html.
 set -e
 cd "$(dirname "$0")"
 
-rm -rf build docs GooeyPainter.jar GooeyPainter-sources.jar
-mkdir -p build
+NAME=GooeyPainter
+PKG=gooeypainter
+RELEASE=11    # the oldest Java version the jar runs on
 
-javac --release 11 -Xdoclint:all -d build src/gooeypainter/*.java
-jar --create --file GooeyPainter.jar -C build .
-jar --create --file GooeyPainter-sources.jar -C src .
+rm -rf build _site
+mkdir -p _site
 
-javadoc -quiet -Xdoclint:all -d docs \
-    -windowtitle "GooeyPainter" -doctitle "GooeyPainter" \
-    -sourcepath src gooeypainter
-cp GooeyPainter.jar GooeyPainter-sources.jar docs/
-touch docs/.nojekyll
+if ls src/$PKG/*.java >/dev/null 2>&1; then
+    rm -f $NAME.jar $NAME-sources.jar
+    mkdir -p build
+    javac --release $RELEASE -Xlint:-options -d build src/$PKG/*.java
+    jar --create --file $NAME.jar -C build . LICENSE
+    jar --create --file $NAME-sources.jar -C src . LICENSE
+    javadoc @javadoc-options.txt
+    cp $NAME.jar $NAME-sources.jar _site/
+    rm -rf build
+    echo "Built $NAME.jar and $NAME-sources.jar"
+else
+    echo "No code in src/$PKG yet, so only the showcase page was built."
+fi
 
-rm -rf build
-echo "Built GooeyPainter.jar, GooeyPainter-sources.jar, and docs/"
+cp -R site/. _site/
+touch _site/.nojekyll
+echo "Website is ready in _site/ (open _site/index.html to preview it)"

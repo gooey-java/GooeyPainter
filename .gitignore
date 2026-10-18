@@ -1,8 +1,11 @@
-# Compiler output (build.sh / build.bat delete this when they finish)
+# Made by build.sh / build.bat (GitHub rebuilds the website itself)
+_site/
 build/
+
+# Compiled class files (VS Code rebuilds these automatically)
 bin/
 *.class
 
-# OS clutter
+# Operating system files
 .DS_Store
 Thumbs.db
