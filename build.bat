@@ -16,7 +16,7 @@ cd /d "%~dp0"
 set NAME=GooeyPainter
 set PKG=gooeypainter
 rem The oldest Java version the jar runs on:
-set RELEASE=11
+set RELEASE=8
 
 if exist build rmdir /s /q build
 if exist _site rmdir /s /q _site

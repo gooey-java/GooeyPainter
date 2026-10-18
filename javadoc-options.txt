@@ -1,6 +1,6 @@
 -quiet
 -Xdoclint:all
---release 11
+--release 8
 -d _site/docs
 -windowtitle GooeyPainter
 -doctitle GooeyPainter
