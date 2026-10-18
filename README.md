@@ -13,11 +13,11 @@ Science A.
 
 ## Quick start
 
-1. Put both jars in your project's `lib` folder. VS Code shows the docs when you
-   hover over GooeyPainter code.
-2. Optionally, add a `grid.txt` file to your project folder to set up the grid
+1. Open VS Code and type **Ctrl + Shift + P** to open the Command Palette. Then start typing "Create..." and select "Create Java Project". Select "No Build Tool", choose the folder that your projects live in, and then name your new project something.
+2. Make a `lib` folder in your project and put `GooeyPainter.jar` and `GooeyPainter-sources.jar` in it.
+3. Optionally, add a `grid.txt` file to your project folder to set up the grid
    (without one, you get a blank 16 x 16 grid).
-3. Import, write your code, and hit Run:
+4. Import, write your code, and hit Run:
 
 ```java
 import gooeypainter.*;
